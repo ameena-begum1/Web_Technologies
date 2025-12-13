@@ -1,0 +1,20 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.nav {
+    width: 70%;
+    margin: auto;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.nav div {
+    display: inline-block;
+    padding: 10px;
+}
+
+.content {
+    text-align: center;
+    margin-top: 20px;
+}
