@@ -1,0 +1,62 @@
+/* Style applied to entire page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+}
+
+/* Container div to center the form */
+.container {
+    width: 450px;                /* Fixed width for form */
+    background-color: white;     /* White background */
+    padding: 20px;               /* Space inside container */
+    margin: 50px auto;           /* Center horizontally */
+    border-radius: 8px;          /* Rounded corners */
+    box-shadow: 0 0 10px gray;   /* Shadow effect */
+    box-sizing: border-box;      /* Prevent overflow */
+}
+
+/* Heading style */
+h2 {
+    text-align: center;
+    color: navy;
+}
+
+/* Label styling */
+label {
+    font-weight: bold;
+    display: block;              /* Each label on new line */
+    margin-top: 10px;
+}
+
+/* Common style for inputs, dropdowns, textarea */
+input, select, textarea {
+    width: 100%;                 /* Full width inside container */
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;      /* Keeps alignment correct */
+}
+
+/* Radio & checkbox input size correction */
+.options input {
+    width: auto;
+    margin-right: 5px;
+}
+
+/* Space above option groups */
+.options {
+    margin-top: 5px;
+}
+
+/* Button container */
+.buttons {
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Button styling */
+.buttons input {
+    padding: 8px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+}
