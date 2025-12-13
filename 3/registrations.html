@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Title of the webpage -->
+    <title>Registration Form</title>
+
+    <!-- Linking external CSS file -->
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+
+<!-- Main container to center the form -->
+<div class="container">
+
+    <!-- Form heading -->
+    <h2>Student Registration Form</h2>
+
+    <!-- Form starts here -->
+    <form>
+
+        <!-- TEXT FIELD: Name -->
+        <label>Name</label>
+        <input type="text" placeholder="Enter your name">
+
+        <!-- PASSWORD FIELD -->
+        <label>Password</label>
+        <input type="password" placeholder="Enter password">
+
+        <!-- DROPDOWN LIST -->
+        <label>Branch</label>
+        <select>
+            <option>Select Branch</option>
+            <option>CSE</option>
+            <option>ECE</option>
+            <option>MECH</option>
+            <option>CIVIL</option>
+        </select>
+
+        <!-- LIST BOX (Multiple selection using Ctrl key) -->
+        <label>Subjects (Hold Ctrl to select multiple)</label>
+        <select multiple size="4">
+            <option>DSA</option>
+            <option>DBMS</option>
+            <option>OS</option>
+            <option>AI</option>
+        </select>
+
+        <!-- RADIO BUTTONS (Select only one) -->
+        <label>Gender</label>
+        <div class="options">
+            <input type="radio" name="gender"> Male
+            <input type="radio" name="gender"> Female
+        </div>
+
+        <!-- CHECKBOXES (Select one or more) -->
+        <label>Skills</label>
+        <div class="options">
+            <input type="checkbox"> Python
+            <input type="checkbox"> Java
+            <input type="checkbox"> C
+        </div>
+
+        <!-- TEXT AREA -->
+        <label>Address</label>
+        <textarea rows="4"></textarea>
+
+        <!-- SUBMIT & RESET BUTTONS (Inline CSS used here) -->
+        <div class="buttons">
+            <input type="submit" value="Submit"
+                   style="background-color: navy; color: white;">
+            <input type="reset" value="Reset"
+                   style="background-color: gray; color: white;">
+        </div>
+
+    </form>
+    <!-- Form ends here -->
+
+</div>
+<!-- Container ends here -->
+
+</body>
+</html>
