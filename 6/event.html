@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Event Handling</title>
+
+    <script>
+        /* onload event */
+        function showInstructions() {
+            alert("Read the instructions carefully");
+        }
+
+        /* onsubmit event */
+        function validateForm() {
+            alert("Form submitted successfully");
+        }
+
+        /* onreset event */
+        function clearForm() {
+            alert("Form cleared");
+        }
+
+        /* onclick event + DOM manipulation */
+        function copyAddress() {
+            var contact = document.getElementById("cta").value;
+            document.getElementById("pta").value = contact;
+        }
+
+        /* onfocus event */
+        function focusPhone() {
+            document.getElementById("phone").style.color = "red";
+        }
+
+        /* onblur event */
+        function blurPhone() {
+            document.getElementById("phone").style.color = "black";
+        }
+    </script>
+</head>
+
+<body onload="showInstructions()">
+
+<center>
+    <h1>JavaScript Event Handling Demo</h1>
+
+    <form onsubmit="validateForm()" onreset="clearForm()">
+
+        Name:
+        <input type="text" id="sname" onblur="alert('Name field left')">
+        <br><br>
+
+        Phone No:
+        <input type="text" id="phone"
+               onfocus="focusPhone()"
+               onblur="blurPhone()">
+        <br><br>
+
+        Contact Address:
+        <textarea id="cta"></textarea>
+        <br><br>
+
+        Permanent Address:
+        <textarea id="pta"></textarea>
+        <br><br>
+
+        <input type="button"
+               value="Same as Contact Address"
+               onclick="copyAddress()">
+        <br><br>
+
+        <!-- Mouseover & Mouseout demo -->
+        <p id="hoverText">Move mouse over this text</p>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+        <br><br>
+
+        <input type="button" value="Button-3" id="btn3">
+
+    </form>
+</center>
+
+<!-- DOM handling using addEventListener -->
+<script>
+    /* mouseover & mouseout using DOM */
+    var txt = document.getElementById("hoverText");
+
+    txt.onmouseover = function () {
+        txt.style.color = "blue";
+        alert("Mouse Over Event");
+    };
+
+    txt.onmouseout = function () {
+        txt.style.color = "black";
+        alert("Mouse Out Event");
+    };
+
+    /* click event using addEventListener */
+    var btn = document.getElementById("btn3");
+
+    btn.addEventListener("click", function () {
+        alert("Button-3 Clicked Listener 1");
+    });
+
+    btn.addEventListener("click", function () {
+        alert("Button-3 Clicked Listener 2");
+    });
+</script>
+
+</body>
+</html>
