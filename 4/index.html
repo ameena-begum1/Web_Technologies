@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Web Page</title>
+</head>
+
+<body>
+
+<center>
+    <h2 id="greeting"></h2>
+    <p id="date"></p>
+
+    <h3>Your Lucky Number</h3>
+    <p id="lucky"></p>
+
+    <p id="modified"></p>
+
+    <p> Modified by: 1604-22-733-121</p>
+</center>
+
+<script>
+    // Date object
+    var today = new Date();
+    var hour = today.getHours();
+
+    // Greeting based on time
+    var greet;
+    if (hour < 12) {
+        greet = "Good Morning";
+    } else if (hour < 18) {
+        greet = "Good Afternoon";
+    } else {
+        greet = "Good Evening";
+    }
+
+    // Display greeting and date
+    document.getElementById("greeting").innerHTML = greet;
+    document.getElementById("date").innerHTML = "Today's Date: " + today.toDateString();
+
+    // Math object - random lucky number
+    var luckyNumber = Math.floor(Math.random() * 100) + 1;
+    document.getElementById("lucky").innerHTML = luckyNumber;
+
+    // Last modified information
+    document.getElementById("modified").innerHTML =
+        "Last Modified: " + document.lastModified;
+</script>
+
+</body>
+</html>
