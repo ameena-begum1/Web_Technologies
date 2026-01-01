@@ -1,110 +1,124 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>JavaScript Event Handling</title>
-
-    <script>
-        /* onload event */
-        function showInstructions() {
-            alert("Read the instructions carefully");
-        }
-
-        /* onsubmit event */
-        function validateForm() {
-            alert("Form submitted successfully");
-        }
-
-        /* onreset event */
-        function clearForm() {
-            alert("Form cleared");
-        }
-
-        /* onclick event + DOM manipulation */
-        function copyAddress() {
-            var contact = document.getElementById("cta").value;
-            document.getElementById("pta").value = contact;
-        }
-
-        /* onfocus event */
-        function focusPhone() {
-            document.getElementById("phone").style.color = "red";
-        }
-
-        /* onblur event */
-        function blurPhone() {
-            document.getElementById("phone").style.color = "black";
-        }
-    </script>
+    <title>Event Handling</title>
 </head>
 
-<body onload="showInstructions()">
+<body onload="showOnLoad()">
 
 <center>
-    <h1>JavaScript Event Handling Demo</h1>
+    <h1>Event Handling Demo</h1>
 
-    <form onsubmit="validateForm()" onreset="clearForm()">
+    <form onsubmit="formValidate()" onreset="clearForm()">
+        <table cellpadding="8">
 
-        Name:
-        <input type="text" id="sname" onblur="alert('Name field left')">
-        <br><br>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input type="text" id="sname"
+                           onblur="alert('Please fill out your name')">
+                </td>
+            </tr>
 
-        Phone No:
-        <input type="text" id="phone"
-               onfocus="focusPhone()"
-               onblur="blurPhone()">
-        <br><br>
+            <tr>
+                <td>Phone No.</td>
+                <td>
+                    <input type="text" id="phone"
+                           onfocus="OnFocusPhone()"
+                           onblur="onBlurPhone()">
+                </td>
+            </tr>
 
-        Contact Address:
-        <textarea id="cta"></textarea>
-        <br><br>
+            <tr>
+                <td>Contact Address</td>
+                <td>
+                    <textarea id="cta" rows="3" cols="25"></textarea>
+                </td>
+            </tr>
 
-        Permanent Address:
-        <textarea id="pta"></textarea>
-        <br><br>
+            <tr>
+                <td>Permanent Address</td>
+                <td>
+                    <textarea id="pta" rows="3" cols="25"></textarea>
+                </td>
+            </tr>
 
-        <input type="button"
-               value="Same as Contact Address"
-               onclick="copyAddress()">
-        <br><br>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button"
+                           value="Same as Contact Address"
+                           onclick="copyAddress()">
+                </td>
+            </tr>
 
-        <!-- Mouseover & Mouseout demo -->
-        <p id="hoverText">Move mouse over this text</p>
+            <tr>
+                <td colspan="2" align="center">
+                    <p id="hovertext">Move the Mouse over this text</p>
+                </td>
+            </tr>
 
-        <input type="submit" value="Submit">
-        <input type="reset" value="Reset">
-        <br><br>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Clear Form">
+                </td>
+            </tr>
 
-        <input type="button" value="Button-3" id="btn3">
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" value="Button" id="btn">
+                </td>
+            </tr>
 
+        </table>
     </form>
 </center>
 
-<!-- DOM handling using addEventListener -->
-<script>
-    /* mouseover & mouseout using DOM */
-    var txt = document.getElementById("hoverText");
+    <script>
 
-    txt.onmouseover = function () {
-        txt.style.color = "blue";
-        alert("Mouse Over Event");
-    };
+    // Functions for event handling 
+    function showOnLoad() {
+        alert("Form Loading")
+    }
+    function formValidate() {
+        alert("Form submitted successfully")
+    }
+    function clearForm() {
+        alert("Form cleared")
+    }
+    function OnFocusPhone() {
+        document.getElementById("phone").style.color = "red"
+    }
+    function onBlurPhone() {
+        document.getElementById("phone").style.color = "black"
+    }
+    function copyAddress() {
+    var addr = document.getElementById("cta").value;
+    document.getElementById("pta").value = addr;
 
-    txt.onmouseout = function () {
-        txt.style.color = "black";
-        alert("Mouse Out Event");
-    };
+    }
 
-    /* click event using addEventListener */
-    var btn = document.getElementById("btn3");
+    // DOM manupilations
+    var txt = document.getElementById("hovertext")
 
-    btn.addEventListener("click", function () {
-        alert("Button-3 Clicked Listener 1");
-    });
+    txt.onmouseover = function() {
+        txt.style.color = "blue"
+        alert("MouseOver event")
+    }
+    txt.onmouseout = function() {
+        txt.style.color = "black"
+        alert("MouseOut event")
+    }
 
-    btn.addEventListener("click", function () {
-        alert("Button-3 Clicked Listener 2");
-    });
+    // Event listener
+    var button = document.getElementById("btn")
+
+    button.addEventListener("click", function() {
+        alert("button clicked Listener-1")
+    })
+    button.addEventListener("click", function() {
+        alert("button clicked Listener-2")
+    })
+
 </script>
-
 </body>
 </html>
