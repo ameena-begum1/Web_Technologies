@@ -36,7 +36,10 @@ MongoClient.connect(url, function(err, client) {
 
 
 //to run 
+//create folder retrieve also in folder 14
+//cd restservices
 //on terminal: node index.js
 //make sure you insert something in your mongodb database 
 //open on browser http://localhost:8080/retrieve
+
 
