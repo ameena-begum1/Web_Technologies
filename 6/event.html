@@ -8,7 +8,7 @@
 <center>
     <h1>Event Handling Demo</h1>
 
-    <form onsubmit="formValidate()" onreset="clearForm()">
+    <form onsubmit="return formValidate()" onreset="clearForm()">
         <table cellpadding="8">
 
             <tr>
@@ -81,6 +81,7 @@
     }
     function formValidate() {
         alert("Form submitted successfully")
+        return false;
     }
     function clearForm() {
         alert("Form cleared")
