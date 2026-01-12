@@ -3,7 +3,7 @@ var os = require('os');
 var fs = require('fs'); 
 // HTTP Server 
 var server = http.createServer(function (req, res) { 
-    res.writeHead(200, { 'Content-Type': 'text/html' }); 
+    res.writeHead(200, { 'Content-Type': 'html/text' }); 
     res.write('Hello Web Technologies Lab <br>'); 
     res.write('Date: ' + Date() + '<br>'); 
     res.write('Platform: ' + os.platform() + '<br>'); 

@@ -11,7 +11,7 @@ body {
     padding: 20px;               /* Space inside container */
     margin: 50px auto;           /* Center horizontally */
     border-radius: 8px;          /* Rounded corners */
-    box-shadow: 0 0 10px gray;   /* Shadow effect */
+    box-shadow: 0px 1px gray;   /* Shadow effect */
     box-sizing: border-box;      /* Prevent overflow */
 }
 
